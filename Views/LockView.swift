@@ -12,6 +12,7 @@ struct LockView: View {
     
     var body: some View {
         ZStack {
+            LockCircleView(isLock: $isLock)
             LockRectangle(isLock: $isLock)
             LockTextAndToggleView(isLock: $isLock)
         }
