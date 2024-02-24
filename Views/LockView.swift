@@ -33,5 +33,12 @@ struct LockTextAndToggleView : View {
             Toggle("", isOn: $isLock)
                 .labelsHidden()
         }
+        .padding()
+        .overlay {
+            RoundedRectangle(cornerRadius: 25)
+                .stroke(lineWidth: 5)
+                .foregroundStyle(isLock ? .green : .gray)
+                .frame(width: 250, height: 250, alignment: .center)
+        }
     }
 }
