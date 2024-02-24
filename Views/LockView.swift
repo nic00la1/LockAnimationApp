@@ -12,6 +12,7 @@ struct LockView: View {
     
     var body: some View {
         ZStack {
+            LockRectangle(isLock: $isLock)
             LockTextAndToggleView(isLock: $isLock)
         }
     }
@@ -40,5 +41,16 @@ struct LockTextAndToggleView : View {
                 .foregroundStyle(isLock ? .green : .gray)
                 .frame(width: 250, height: 250, alignment: .center)
         }
+    }
+}
+
+// MARK: - LockRectangle
+struct LockRectangle: View {
+    @Binding var isLock: Bool
+    var body: some View {
+        RoundedRectangle(cornerRadius: 25)
+            .foregroundStyle(.black)
+            .foregroundStyle(isLock ? .green : .gray)
+            .frame(width: 250, height: 250, alignment: .center)
     }
 }
