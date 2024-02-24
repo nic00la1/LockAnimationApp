@@ -18,7 +18,7 @@ struct LockView: View {
 }
 
 #Preview {
-    LockView()
+    ContentView()
 }
 
 // MARK: - LockTextAndToggle View
@@ -29,6 +29,9 @@ struct LockTextAndToggleView : View {
             Text(isLock ? "Unlock" : "Lock")
                 .font(.largeTitle)
                 .foregroundStyle(isLock ? .green : .gray)
+                .fontWeight(.regular)
+            Toggle("", isOn: $isLock)
+                .labelsHidden()
         }
     }
 }
