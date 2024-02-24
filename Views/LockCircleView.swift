@@ -17,6 +17,10 @@ struct LockCircleView: View {
                 .stroke(isLock ? .green : .gray, style: StrokeStyle(lineWidth: 20, lineCap: .round))
                 .frame(width: 160, height: 160, alignment: .center)
                 .rotationEffect(.degrees(isLock ? 270 : 180))
+                .animation(Animation.easeInOut(duration: 0.5).repeatCount(1), value: isLock)
+                .onAppear() {
+                    self.isLock.toggle()
+                }
                 .offset(x: 0, y: -133)
         }
     }
